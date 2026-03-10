@@ -284,6 +284,10 @@ a {
   align-items: start;
 }
 
+.split--single {
+  grid-template-columns: 1fr;
+}
+
 .stats {
   display: grid;
   grid-auto-flow: column;
