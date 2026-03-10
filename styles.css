@@ -289,6 +289,12 @@ a {
   grid-auto-flow: column;
   grid-auto-columns: minmax(210px, 1fr);
   gap: 1.2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.stat {
+  text-align: center;
 }
 
 @media (max-width: 720px) {
