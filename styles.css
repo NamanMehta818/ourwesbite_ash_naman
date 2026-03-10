@@ -302,6 +302,16 @@ a {
   text-align: center;
 }
 
+.stat-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.stat-link .stat {
+  height: 100%;
+}
+
 @media (max-width: 720px) {
   .stats {
     grid-auto-flow: row;
