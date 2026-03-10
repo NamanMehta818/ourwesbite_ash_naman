@@ -14,7 +14,7 @@ A clean, modern landing page for a nonprofit that builds free websites for small
 2. Or run a simple server from the terminal:
 
 ```bash
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
 Then open: http://localhost:8000
