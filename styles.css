@@ -286,7 +286,16 @@ a {
 
 .stats {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(210px, 1fr);
   gap: 1.2rem;
+}
+
+@media (max-width: 720px) {
+  .stats {
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+  }
 }
 
 .stat {
