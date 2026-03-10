@@ -35,7 +35,7 @@ function animateCount(element, target, duration = 1500) {
   requestAnimationFrame(step);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initCountAnimations() {
   const counters = document.querySelectorAll('[data-count]');
   counters.forEach((counter) => {
     const target = Number(counter.getAttribute('data-count'));
@@ -43,7 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
       animateCount(counter, target);
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCountAnimations);
+} else {
+  initCountAnimations();
+}
 
 function handleSubmit(event) {
   event.preventDefault();
