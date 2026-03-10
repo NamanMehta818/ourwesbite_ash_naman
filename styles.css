@@ -295,6 +295,7 @@ a {
   gap: 1.2rem;
   justify-content: center;
   justify-items: center;
+  margin-top: 2.5rem;
 }
 
 .stat {
