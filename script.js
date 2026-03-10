@@ -16,6 +16,35 @@ if (navToggle && nav) {
   });
 }
 
+function animateCount(element, target, duration = 1500) {
+  const start = 0;
+  const range = target - start;
+  const startTime = performance.now();
+
+  function step(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.floor(start + range * progress);
+    element.textContent = value;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('[data-count]');
+  counters.forEach((counter) => {
+    const target = Number(counter.getAttribute('data-count'));
+    if (!Number.isNaN(target)) {
+      animateCount(counter, target);
+    }
+  });
+});
+
 function handleSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
