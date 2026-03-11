@@ -13,6 +13,7 @@
   --max: 1100px;
   --spacing: 1.25rem;
   --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --header-height: 4.5rem;
 }
 
 * {
@@ -21,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: #050516;
 }
 
 body {
@@ -45,12 +47,24 @@ a {
 
 /* Header */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 20;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 999;
   backdrop-filter: blur(18px);
   background: rgba(5, 5, 22, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  height: 100%;
+  padding: 0 0;
+}
+
+main {
+  padding-top: var(--header-height);
 }
 
 .header-inner {
@@ -350,6 +364,21 @@ a {
 
 .cards {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.about-cards {
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.about-cards .card {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.about-cards .card h3 {
+  text-align: center;
 }
 
 .cards .card {
